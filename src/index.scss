@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  button{
+    @apply border border-black rounded-xl px-5 py-1;
+  }
+}
+
+@import 'react-nano-scrollbar/dist/index.css';
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@import 'assets/style/header';
+@import 'assets/style/custom'
