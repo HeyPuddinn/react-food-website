@@ -9,6 +9,15 @@ const Navbar = () => {
 
   const [nav, setNav] = useState(false) 
 
+  const menuItems = [
+    { icon: <TbTruckDelivery size={25} className='mr-4' />, text: 'Orders' },
+    { icon: <MdFavorite size={25} className='mr-4' />, text: 'Favorites' },
+    { icon: <FaWallet size={25} className='mr-4' />, text: 'Wallet' },
+    { icon: <MdHelp size={25} className='mr-4' />, text: 'Help' },
+    { icon: <AiFillTag size={25} className='mr-4' />, text: 'Promotions' },
+    { icon: <BsFillCartFill size={25} className='mr-4' />, text: 'Best Ones' },
+    { icon: <FaUserFriends size={25} className='mr-4' />, text: 'Invite Friends' },
+  ];
 
   return (
     <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4">
@@ -44,27 +53,11 @@ const Navbar = () => {
         <h2 className='text-2xl p-4'>Best <span className='font-bold'>Eats</span></h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-800 p-4">
-            <li className='text-xl py-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200'>
-              <TbTruckDelivery size={25} className="mr-4"/> Orders
-            </li>
-            <li className='text-xl py-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200'>
-              <MdFavorite size={25} className="mr-4"/> Favorites
-            </li>
-            <li className='text-xl py-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200'>
-              <FaWallet size={25} className="mr-4"/> Wallet
-            </li>
-            <li className='text-xl py-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200'>
-              <MdHelp size={25} className="mr-4"/> Help
-            </li>
-            <li className='text-xl py-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200'>
-              <AiFillTag size={25} className="mr-4"/> Promotions
-            </li>
-            <li className='text-xl py-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200 '>
-              <BsFillCartFill size={25} className="mr-4"/> Best Ones
-            </li>
-            <li className='text-xl py-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200 '>
-              <FaUserFriends size={25} className="mr-4"/> Invite Friends
-            </li>
+            {menuItems.map((item, index) => (
+              <li className="text-xl p-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200">
+                {item.icon}{item.text}
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
