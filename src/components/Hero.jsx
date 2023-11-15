@@ -19,7 +19,7 @@ const Hero = () => {
         }}
         modules={[Autoplay]}
         >
-        <SwiperSlide>
+        <SwiperSlide className="h-full">
           <div className="max-h-[500px] relative rounded-lg overflow-hidden">
             {/* Overlay */}
             <div className="absolute w-full h-full text-gray-200 max-h-[500px] bg-black/40 flex flex-col justify-center">
@@ -29,17 +29,17 @@ const Hero = () => {
             <img src="https://images.pexels.com/photos/1639565/pexels-photo-1639565.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="/" className="w-full max-h-[500px] object-cover object-center" />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="h-full">
           <div className="max-h-[500px] relative rounded-lg overflow-hidden">
             {/* Overlay */}
             <div className="absolute w-full h-full text-gray-200 max-h-[500px] bg-black/40 flex flex-col justify-center items-center">
               <h1 className="px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">The <span className="text-orange-500">Fast food</span></h1>
               <h1 className="px-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"> <span className="text-orange-500">at your </span> fingertips</h1>
             </div>
-            <img src="https://images.pexels.com/photos/212303/pexels-photo-212303.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="/" className="w-full max-h-[500px] object-cover object-center" />
+            <img src="https://images.pexels.com/photos/1893557/pexels-photo-1893557.jpeg" alt="/" className="w-full max-h-[500px] h-full object-cover object-center" />
           </div>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="h-full">
           <div className="max-h-[500px] relative rounded-lg overflow-hidden">
             {/* Overlay */}
             <div className="absolute w-full h-full text-gray-200 max-h-[500px] bg-black/40 flex flex-col justify-center items-end">

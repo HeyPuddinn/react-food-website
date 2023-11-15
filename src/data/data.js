@@ -179,3 +179,78 @@ export const categories = [
       'https://duyt4h9nfnj50.cloudfront.net/new_search_home_eats_icon/Placeholder_Plates@3x.png',
   },
 ];
+
+export const footer = [
+  {
+    title: 'Home', 
+    content: [
+      {
+        name: 'Menu',
+        link: '#'
+      },
+      {
+        name: 'Location',
+        link: '#'
+      },
+      {
+        name: 'Offer',
+        link: '#'
+      },
+      {
+        name: 'Discount',
+        link: '#'
+      },
+      {
+        name: 'Information',
+        link: '#'
+      }
+    ]
+  },
+  {
+    title: 'About Us', 
+    content: [
+      {
+        name: 'Menu',
+        link: '#'
+      },
+      {
+        name: 'Location',
+        link: '#'
+      },
+      {
+        name: 'Offer',
+        link: '#'
+      },
+      {
+        name: 'Discount',
+        link: '#'
+      }
+    ]
+  },
+  {
+    title: 'Contact Us', 
+    content: [
+      {
+        name: 'Email',
+        link: '#'
+      },
+      {
+        name: 'Phone Number',
+        link: '#'
+      }
+    ]
+  },
+  {
+    title: 'Information', 
+    content: [
+      {
+        name: 'FAQs',
+        link: '#'
+      },
+      {
+        name: 'Phone Number',
+        link: '#'
+      }
+    ]
+  },
+]

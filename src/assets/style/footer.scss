@@ -1,0 +1,23 @@
+
+.app a{
+  background: url(https://static.kfcvietnam.com.vn/images/web/logo_appstore.png);
+  @apply bg-contain bg-no-repeat;
+}
+
+.play a {
+  background: url(https://static.kfcvietnam.com.vn/images/web/logo_playstore.png);
+  @apply bg-contain bg-no-repeat;
+
+}
+.icon a{
+  svg {
+    transition: all 0.5s ease-in-out;
+  }
+}
+.icon a:hover {
+  box-shadow: 0 0 8px #fff;
+  svg {
+    transform: rotate(360deg);
+  }
+}
+
