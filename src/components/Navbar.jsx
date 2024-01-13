@@ -54,7 +54,7 @@ const Navbar = () => {
         <nav>
           <ul className="flex flex-col p-4 text-gray-800 p-4">
             {menuItems.map((item, index) => (
-              <li className="text-xl p-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200">
+              <li key={index} className="text-xl p-4 flex items-center hover:bg-gray-200 cursor-pointer hover:text-orange-500 duration-200">
                 {item.icon}{item.text}
               </li>
             ))}

@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Food = () => {
   const [foods, setFoods] = useState(data);
@@ -37,7 +38,7 @@ const Food = () => {
   const createButton = (type) => (
     <button
       onClick={() => filterType(type)}
-      className={`m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white ${(active === type) ? 'bg-orange-600 text-white' : ''} ${type === 'all' ? 'rounded-full' : ''}`}
+      className={`type-item m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white ${(active === type) ? 'type-active' : ''} ${type === 'all' ? 'rounded-full' : ''}`}
     >
       {type.charAt(0).toUpperCase() + type.slice(1)}
     </button>
@@ -46,7 +47,7 @@ const Food = () => {
   const createPriceButton = (price) => (
     <button
       onClick={() => filterPrice(price)}
-      className={`m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white ${active === price ? 'bg-orange-600 text-white' : ''}`}
+      className={`price-item m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white ${active === price ? 'price-active' : ''}`}
     >
       {price}
     </button>
@@ -99,14 +100,18 @@ const Food = () => {
       <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
         {foods.map((item, index) => (
           <div className="border shadow-lg hover:scale-105 duration-300 rounded-lg relative" key={index}>
-            <img src={item.image} alt={item.name} className="w-full h-[200px] object-cover object-center rounded-t-lg" />
+            <LazyLoadImage
+              alt={item.name}
+              src={item.image}
+              className='w-full h-[200px] object-cover object-center rounded-t-lg'
+            />
             <div className="flex justify-between items-center px-2 py-4">
               <h2 className="font-bold">{item.name}</h2>
               <p>
                 <span className="bg-orange-500 text-white p-2 rounded-full">{item.price}</span>
               </p>
             </div>
-            <Button onClick={handleOpen}>Open modal</Button>
+            <Button onClick={handleOpen}>View Detail</Button>
             <Modal
               open={open}
               onClose={handleClose}
@@ -115,7 +120,7 @@ const Food = () => {
             >
               <Box sx={style}>
                 <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
+                {item.name}
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
