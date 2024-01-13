@@ -26,6 +26,12 @@ const Food = () => {
     setActive(category)
   }
 
+  // Set default active item
+  React.useEffect(() => {
+    setActive('all');
+  }, []);
+
+
   // Fill by price
   const filterPrice = (price) => {
     setFoods(
