@@ -1,30 +1,36 @@
 import React, { useState } from "react";
 import { data } from '../data/data.js';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import Popup from 'reactjs-popup';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Food = () => {
   const [foods, setFoods] = useState(data);
   const [active, setActive] = useState("");
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [activePrice, setActivePrice] = useState("");
 
   // Filter Type food
+  const newFoods = [...foods];
   const filterType = (category) => {
     setFoods(
       data.filter((item) => {
         if (category === 'all') {
-          return item
+          return item;
         }
-        return item.category === category
+        return item.category === category;
       })
-    )
-    setActive(category)
+    );
+    setActive(category);
+    setActivePrice('');
   }
+  // Fill by price
+  const filterPrice = (price) => {
+    setFoods(
+      newFoods.filter((item) => {
+        return item.price === price;
+      })
+    );
+    setActivePrice(price);
+  };
 
   // Set default active item
   React.useEffect(() => {
@@ -32,14 +38,7 @@ const Food = () => {
   }, []);
 
 
-  // Fill by price
-  const filterPrice = (price) => {
-    setFoods(
-      data.filter((item) => {
-        return item.price === price
-      }))
-    setActive(price)
-  }
+
 
   const createButton = (type) => (
     <button
@@ -53,32 +52,16 @@ const Food = () => {
   const createPriceButton = (price) => (
     <button
       onClick={() => filterPrice(price)}
-      className={`price-item m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white ${active === price ? 'price-active' : ''}`}
+      className={`price-item m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white ${activePrice === price ? 'price-active' : ''}`}
     >
       {price}
     </button>
   )
 
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
-
   return (
     <div className="max-w-[1640px] mx-auto px-4 py-12 list-food">
       <h1 className="text-orange-600 font-bold text-4xl text-center">Top Rated Menu Items</h1>
-
-      {/* FIlter Row */}
       <div className="flex flex-col lg:flex-row justify-between">
-
-        {/* Filter Type */}
         <div>
           <p className="font-bold text-gray-700">Filter Type:</p>
           <div className="flex justify-between flex-wrap">
@@ -89,8 +72,6 @@ const Food = () => {
             {createButton('chicken')}
           </div>
         </div>
-
-        {/* Filter Price */}
         <div>
           <p className="font-bold text-gray-700">Filter Price:</p>
           <div className="flex justify-between max-w-[390px] w-full">
@@ -101,8 +82,6 @@ const Food = () => {
           </div>
         </div>
       </div>
-
-      {/* display image */}
       <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
         {foods.map((item, index) => (
           <div className="border shadow-lg hover:scale-105 duration-300 rounded-lg relative" key={index}>
@@ -117,22 +96,9 @@ const Food = () => {
                 <span className="bg-orange-500 text-white p-2 rounded-full">{item.price}</span>
               </p>
             </div>
-            <Button onClick={handleOpen}>View Detail</Button>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                {item.name}
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                </Typography>
-              </Box>
-            </Modal>
+            <Popup trigger={<button> Trigger</button>} position="right center">
+              <div>Popup content here !!</div>
+            </Popup>
           </div>
         ))}
       </div>
