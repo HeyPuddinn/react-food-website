@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Footer from "./Footer"
+import image1 from "../assets/images/h2_cat-6.png";
 
 const ModContentLeftRight = () => {
   return (
@@ -8,6 +9,7 @@ const ModContentLeftRight = () => {
       <Navbar />
         modcontentleftright
         dhgjtjkt
+        <img src={image1} alt="" />
       <Footer />
     </div>
   )
