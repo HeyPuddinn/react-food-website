@@ -7,6 +7,7 @@ const ModContentLeftRight = () => {
     <div>
       <Navbar />
         modcontentleftright
+        dhgjtjkt
       <Footer />
     </div>
   )
