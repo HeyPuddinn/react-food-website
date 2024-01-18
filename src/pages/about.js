@@ -1,10 +1,10 @@
 import React from 'react';
+import ModContentLeftRight from '../components/ModContentLeftRight';
 
 const AboutPage = () => {
     return (
         <div>
-            <h1>About Us</h1>
-            <p>This is the about page of our Fast Food Website.</p>
+            <ModContentLeftRight />
         </div>
     );
 }
