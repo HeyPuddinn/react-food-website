@@ -1,20 +1,17 @@
-import react from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import HeadlineCards from './components/HeadlineCards';
-import Food from './components/Food';
-import Categprory from './components/Category';
-import Footer from './components/Footer';
+import React from 'react';
+import { BrowserRouter, Router, Route, Routes } from 'react-router-dom';
+import AboutPage from './pages/about';
+import Home from './pages/home';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
-      <HeadlineCards />
-      <Food />
-      <Categprory/>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          {/* <Route path="/about" element={AboutPage} />  */}
+        </Routes>
+      </BrowserRouter >
     </div>
   );
 }

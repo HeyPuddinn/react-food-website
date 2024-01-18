@@ -1,8 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-// import { ScrollArea } from 'react-nano-scrollbar';
 document.title ="Fast Food Website"; 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

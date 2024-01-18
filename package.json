@@ -16,6 +16,7 @@
     "react-icons": "^4.8.0",
     "react-lazy-load-image-component": "^1.6.0",
     "react-nano-scrollbar": "^0.0.4",
+    "react-router-dom": "^6.21.2",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "reactjs-popup": "^2.0.6",
