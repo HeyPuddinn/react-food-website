@@ -1,0 +1,51 @@
+.modal {
+  @apply text-sm;
+
+  & > .header {
+    @apply w-full border-b text-lg text-center py-1;
+  }
+
+  & > .content {
+    @apply w-full py-2 px-1;
+  }
+
+  & > .actions {
+    @apply w-full py-2 px-1 mx-auto text-center;
+  }
+
+  & > .close {
+    @apply cursor-pointer absolute block py-1 px-2 text-2xl bg-white rounded-full border-2 border-gray-300;
+    right: -10px;
+    top: -10px;
+  }
+}
+
+.button-popup-close {
+  @apply p-3 border-none outline-none text-[20px] text-white bg-black rounded-none
+}
+
+.popup-overlay {
+  background: rgba(0,0,0,.5);
+}
+.popup-content {
+  @apply bg-white;
+  -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+}
+
+@keyframes anvil {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  1% {
+    transform: scale(0.96) translateY(10px);
+    opacity: 0;
+    box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+  }
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+    box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+  }
+}

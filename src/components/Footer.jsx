@@ -15,13 +15,13 @@ const Footer = () => {
           {footer.map((item, index) => (
           <div className="grid-cols-2" key={index}>
             <div className="title">
-              <h6 className="text-white font-bold text-lg pb-3">{item.title}</h6>
+              <h6 className="text-white font-bold text-lg pb-3 mb-0">{item.title}</h6>
             </div>
             <div className="title-content">
-              <ul className="text-gray-500">
+              <ul className="text-gray-500 list-none pl-0">
                 {item.content.map((content, i) => (
-                  <li className="py-1" key={i}>
-                    <a href={content.link} className="hover:text-white">{content.name}</a>
+                  <li className="py-1 mb-0" key={i}>
+                    <a href={content.link} className="hover:text-white no-underline">{content.name}</a>
                   </li>
                 ))}
               </ul>
@@ -30,7 +30,7 @@ const Footer = () => {
           ))}
           <div className="grid-cols-4">
             <div className="title">
-              <h6 className="text-white text-lg pb-3 font-bold">Download App</h6>
+              <h6 className="text-white text-lg pb-3 font-bold mb-0">Download App</h6>
             </div>
             <div className="flex flex-wrap flex-row justify-center my-5">
               <div className="app max-w-[160px] w-1/2 px-1">

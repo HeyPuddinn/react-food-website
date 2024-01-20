@@ -14,7 +14,7 @@ class Categprory extends Component {
         <div className='grid grid-cols-2 md:grid-cols-4 gap-6 py-6'>
           {categories.map((item, index) => (
             <div key={index} className="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
-              <h2 className='font-bold sm:text-xl'>{item.name}</h2>
+              <h2 className='font-bold sm:text-xl mb-0'>{item.name}</h2>
               <LazyLoadImage
                 alt={item.name}
                 src={item.image}
