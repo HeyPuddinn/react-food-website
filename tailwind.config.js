@@ -38,5 +38,33 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          width: '100%',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          paddingLeft: '26px',
+          paddingRight: '26px',
+          '@screen lg': {
+            maxWidth: '1000px',
+            paddingLeft: '48px',
+            paddingRight: '48px',
+          },
+          '@screen xl': {
+            maxWidth: '1240px',
+          },
+          '@screen 2xl': {
+            maxWidth: '1390px'
+          }
+        },
+        '.container.option-v2': {
+          '@screen lg': {
+            maxWidth: '1100px',
+          }
+        }
+      })
+    }
+  ]
 }
