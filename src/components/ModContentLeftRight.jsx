@@ -77,7 +77,6 @@ const ModContentLeftRight = () => {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );

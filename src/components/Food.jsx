@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import $ from 'jquery';
 import { data } from '../data/data.js';
 import Popup from 'reactjs-popup';
 import { IoClose } from "react-icons/io5";
@@ -9,7 +10,6 @@ const Food = () => {
   const [active, setActive] = useState("");
   const [activePrice, setActivePrice] = useState("");
 
-  const newFoods = [...foods];
   const filterType = (category) => {
     setFoods(
       data.filter((item) => {
@@ -19,16 +19,21 @@ const Food = () => {
         return item.category === category;
       })
     );
+    $('.item-food').show();
     setActive(category);
     setActivePrice('');
   }
+
   const filterPrice = (price) => {
-    setFoods(
-      newFoods.filter((item) => {
-        return item.price === price;
-      })
-    );
-    setActivePrice(price);
+    const itemFoods = document.querySelectorAll('.item-food');
+    itemFoods.forEach((item) => {
+      const eleTarget = item;
+      if (eleTarget.getAttribute('data-price') === price) {
+        eleTarget.style.display = 'block';
+      } else {
+        eleTarget.style.display = 'none';
+      }
+    });
   };
 
   React.useEffect(() => {
@@ -79,7 +84,7 @@ const Food = () => {
       </div>
       <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
         {foods.map((item, index) => (
-          <div className="border shadow-lg item-food overflow-hidden duration-300 rounded-lg relative" key={index}>
+          <div className="border shadow-lg item-food overflow-hidden duration-300 rounded-lg relative" key={index} data-price={item.price}>
             <div className="h-[200px] overflow-hidden">
               <LazyLoadImage
                 alt={item.name}
@@ -95,7 +100,7 @@ const Food = () => {
                 </p>
               </div>
               <Popup
-                trigger={<button className="button"> Open Modal </button>}
+                trigger={<button className="button border-none rounded-none hover:bg-orange-600 hover:text-white"> Detail </button>}
                 modal
                 nested
               >
@@ -109,7 +114,7 @@ const Food = () => {
                           </div>
                           <div className="popup-title py-5 px-6 lg:py-7 lg:px-10 w-full md:w-3/5">
                             <div className="header">
-                              <h2 class="text-h3 ">{item.name}</h2>
+                              <h2 className="text-h3 ">{item.name}</h2>
                             </div>
                             <div className="content ">
                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum.
@@ -118,9 +123,9 @@ const Food = () => {
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="popup-close absolute top-0 right-0">
-                        <button className="close button-popup-close" onClick={close}><IoClose /></button>
+                        <div className="popup-close absolute top-0 right-0">
+                          <button className="close button-popup-close" onClick={close}><IoClose /></button>
+                        </div>
                       </div>
                     </div>
                   </div>
