@@ -4,6 +4,8 @@ import { data } from '../data/data.js';
 import Popup from 'reactjs-popup';
 import { IoClose } from "react-icons/io5";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { IoFastFoodOutline } from "react-icons/io5";
+
 
 const Food = () => {
   const [foods, setFoods] = useState(data);
@@ -100,7 +102,7 @@ const Food = () => {
                 </p>
               </div>
               <Popup
-                trigger={<button className="button border-none rounded-none hover:bg-orange-600 hover:text-white"> Detail </button>}
+                trigger={<button className="button border-none hover:bg-orange-600 hover:text-white rounded-lg flex items-center leading-none py-3">Detail <IoFastFoodOutline className="ml-2" /></button>}
                 modal
                 nested
               >
@@ -110,7 +112,7 @@ const Food = () => {
                       <div className="wrapper-popup lg:max-w-[700px] lg:mx-auto ">
                         <div className="flex flex-nowrap items-center">
                           <div className="popup-img w-full md:w-2/5">
-                            <img src={item.image} alt={item.name} className='w-full h-full object-cover object-center'/>
+                            <img src={item.image} alt={item.name} className='w-full h-full object-cover object-center' />
                           </div>
                           <div className="popup-title py-5 px-6 lg:py-7 lg:px-10 w-full md:w-3/5">
                             <div className="header">
