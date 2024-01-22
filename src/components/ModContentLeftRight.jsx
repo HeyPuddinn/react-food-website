@@ -24,53 +24,61 @@ const ModContentLeftRight = () => {
                 LOVE AND CARE
               </h2>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-              <div className="flex flex-col items-center pt-5">
-                <div className="rowimg mb-5 mt-5">
-                  <img src={image1} alt="" className="rounded-full" />
-                </div>
-                <div className="">
-                  <h4 className="uppercase text-center font-bold">
-                    OUR BURGERS
-                  </h4>
-                </div>
-                <p className="text-center">
-                  At Fazfood , we only use quality ingredients and treat them
-                  with care! We flame grill our steaks, and by using open
-                  kitchens we ensure that guests can always follow the process.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center pt-5 ">
-                <div className="row2img mb-5 mt-[70px]">
-                  <img src={image2} alt="" className="rounded-full" />
-                </div>
-                <div className="">
-                  <h4 className="uppercase text-center font-bold">
-                    Your opinion is important
-                  </h4>
-                </div>
-                <p className="text-center">
-                  We take all constructive feedback seriously, and we would love
-                  along with our staff – to spend every single day making
-                  Fasfood even better! Send your feedback on your experience
-                  with us here.
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center pt-5">
-                <div className="rowimg mb-5 mt-5">
-                  <img src={image3} alt="" className="rounded-full" />
-                </div>
-                <div className="">
-                  <h4 className="uppercase text-center font-bold">
-                    CHICKEN BURGERS
-                  </h4>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pb-[100px] m-5">
+              <div className="rowcontent pl-5 pr-5">
+                <div className="flex flex-col items-center pt-5">
+                  <div className="rowimg mb-5 mt-5">
+                    <img src={image1} alt="" className="rounded-full" />
+                  </div>
+                  <div className="">
+                    <h4 className="uppercase text-center font-bold">
+                      OUR BURGERS
+                    </h4>
+                  </div>
                   <p className="text-center">
-                    At Fazfood, we want to make sure that everyone can get their
-                    hands on a good burger. Go hunting in our versatile burger
-                    menu there is something for every taste and for all sizes!
+                    At Fazfood , we only use quality ingredients and treat them
+                    with care! We flame grill our steaks, and by using open
+                    kitchens we ensure that guests can always follow the
+                    process.
                   </p>
+                </div>
+              </div>
+
+              <div className="rowcontent pl-5 pr-5 mt-[70px]">
+                <div className="flex flex-col items-center pt-5 ">
+                  <div className="row2img mb-5 ">
+                    <img src={image2} alt="" className="rounded-full" />
+                  </div>
+                  <div className="">
+                    <h4 className="uppercase text-center font-bold">
+                      Your opinion is important
+                    </h4>
+                  </div>
+                  <p className="text-center">
+                    We take all constructive feedback seriously, and we would
+                    love along with our staff – to spend every single day making
+                    Fasfood even better! Send your feedback on your experience
+                    with us here.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rowcontent pl-5 pr-5">
+                <div className="flex flex-col items-center pt-5">
+                  <div className="rowimg mb-5 mt-5">
+                    <img src={image3} alt="" className="rounded-full" />
+                  </div>
+                  <div className="">
+                    <h4 className="uppercase text-center font-bold">
+                      CHICKEN BURGERS
+                    </h4>
+                    <p className="text-center">
+                      At Fazfood, we want to make sure that everyone can get
+                      their hands on a good burger. Go hunting in our versatile
+                      burger menu there is something for every taste and for all
+                      sizes!
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
