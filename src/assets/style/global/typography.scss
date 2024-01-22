@@ -77,16 +77,6 @@
   }
   a {
     @apply underline hover:no-underline;
-    &:-webkit-any-link:focus-visible {
-      outline-offset: 3px;
-    }
-  }
-  
-  button{
-    &:focus {
-      outline: -webkit-focus-ring-color auto 1px;
-      outline-offset: 3px;
-    }
   }
   a, button{
     transition: .25s color, .25s background-color, .25s border;

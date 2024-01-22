@@ -1,5 +1,5 @@
 import React from 'react';
-import ModContentLeftRight from '../components/ModContentLeftRight';
+import ModContentLeftRight from '../components/modules/ModContentLeftRight';
 
 const AboutPage = () => {
     return (

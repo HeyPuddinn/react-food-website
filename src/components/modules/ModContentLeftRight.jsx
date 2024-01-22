@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import image1 from "../assets/images/ModContentLeftRight/h2_img-5.jpg";
-import image2 from "../assets/images/ModContentLeftRight/h2_img-6.jpg";
-import image3 from "../assets/images/ModContentLeftRight/h2_img-7.jpg";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
+import image1 from "../../assets/images/ModContentLeftRight/h2_img-5.jpg";
+import image2 from "../../assets/images/ModContentLeftRight/h2_img-6.jpg";
+import image3 from "../../assets/images/ModContentLeftRight/h2_img-7.jpg";
 
 const ModContentLeftRight = () => {
   return (
@@ -85,7 +85,6 @@ const ModContentLeftRight = () => {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );
